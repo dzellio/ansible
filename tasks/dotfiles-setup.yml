@@ -9,10 +9,6 @@
   ansible.builtin.git:
     repo: 'https://github.com/dzellio/.files.git'
     dest: "{{ lookup('env', 'HOME') }}/.files"
-    recursive: yes
-    update: yes
-    accept_hostkey: yes
-    version: master
   tags:
     - install
     - dotfiles
