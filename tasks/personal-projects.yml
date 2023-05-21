@@ -1,0 +1,48 @@
+- name: Check that the personal doesn't exist
+  stat:
+    path: /home/joshua/personal
+  register: personal_exists
+  tags: 
+    - install
+    - dotfiles
+    - neovim
+    - personal-project
+    
+- name:  Creating Personal Directory
+  file:
+    path: "~/personal"
+    state: directory
+  become_user: joshua
+  tags:
+    - install
+    - dotfiles
+    - neovim
+    - personal-project
+  when: personal_exists.stat.exists == False
+  
+- name: Check that the work doesn't exist
+  stat:
+    path: /home/joshua/work
+  register: work_exists
+  tags: 
+    - install
+    - dotfiles
+    - neovim
+    - personal-project
+    - work
+    
+- name:  Creating work Directory
+  file:
+    path: "~/work"
+    state: directory
+  become_user: joshua
+  tags:
+    - install
+    - dotfiles
+    - neovim
+    - personal-project
+    - work
+  when: work_exists.stat.exists == False
+    
+    
+    
