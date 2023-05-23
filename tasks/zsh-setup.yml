@@ -25,3 +25,10 @@
     repo: 'https://github.com/zsh-users/zsh-autosuggestions.git'
     dest: "~/.oh-my-zsh/plugins/zsh-autosuggestions"
   tags: *tags_for_zsh_tasks
+  
+- name: Delete ZSH Default Config
+  ansible.builtin.file:
+    state: absent
+    path: ~/.zshrc
+   
+
