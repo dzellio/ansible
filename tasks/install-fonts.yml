@@ -1,0 +1,17 @@
+- name: ensure fonts directory
+  file:
+    path: "{{ lookup('env', 'HOME') }}/.fonts"
+    state: directory
+
+- name: Fonts Exist
+  shell: "ls {{ lookup('env', 'HOME') }}/.fonts/MesloLGS*"
+  register: MesloLGS_exists
+  ignore_errors: yes
+
+- name: Download Hack
+  when: MesloLGS_exists is failed
+  ansible.builtin.unarchive:
+    src: https://github.com/dzellio/fonts/raw/main/MesloLGS.tar.gz
+    dest: "{{ lookup('env', 'HOME') }}/.fonts/"
+    remote_src: yes
+
