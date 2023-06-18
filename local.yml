@@ -20,4 +20,5 @@
     - include: tasks/nvim-setup.yml
     - include: tasks/lsp-setup.yml
     - include: tasks/dotfiles-setup.yml
+    - include: tasks/install-fonts.yml
 
