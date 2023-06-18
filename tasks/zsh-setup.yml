@@ -20,6 +20,11 @@
   when: oh_my_stats.stat.exists == False
   become_user: joshua
 
+- name: Delete ZSH Default Config
+  ansible.builtin.file:
+    state: absent
+    path: ~/.zshrc
+
 - name: Install zsh-autosuggestions
   ansible.builtin.git:
     repo: 'https://github.com/zsh-users/zsh-autosuggestions.git'
