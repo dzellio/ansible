@@ -36,3 +36,8 @@
   tags: *tags_for_zsh_tasks
   become_user: joshua
 
+- name: Move p10k Config
+  shell: mv $HOME/.files/.p10k.zsh $HOME/.p10k.zsh
+  tags: *tags_for_zsh_tasks
+  become_user: joshua
+
