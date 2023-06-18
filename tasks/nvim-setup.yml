@@ -41,7 +41,7 @@
     - install
     - neovim
     
--name: Install vim Plugins
+- name: Install vim Plugins
   shell: nvim +PlugInstall +qall +silent
   tags:
     - install
