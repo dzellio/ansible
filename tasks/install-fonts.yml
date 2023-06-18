@@ -1,21 +1,6 @@
-- name: ensure fonts directory
-  file:
-    path: "{{ lookup('env', 'HOME') }}/usr/share/fonts"
-    state: directory
-    become: yes
-    
-
-- name: Fonts Exist
-  shell: "ls {{ lookup('env', 'HOME') }}/usr/share/fonts/MesloLGS*"
-  register: MesloLGS_exists
-  become: yes
-  ignore_errors: yes
-
 - name: Unzip Font Folder
-  when: MesloLGS_exists is failed
   ansible.builtin.unarchive:
     src: https://github.com/dzellio/fonts/raw/main/MesloLGS.tar.gz
-    dest: "{{ lookup('env', 'HOME') }}/.fonts/"
+    dest: "/usr/share/fonts"
     remote_src: yes
-    become: yes
 
