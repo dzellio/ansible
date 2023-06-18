@@ -3,4 +3,5 @@
     src: https://github.com/dzellio/fonts/raw/main/MesloLGS.tar.gz
     dest: "/usr/share/fonts"
     remote_src: yes
+  become: yes
 
