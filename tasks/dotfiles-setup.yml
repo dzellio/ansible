@@ -6,6 +6,7 @@
     - stow
   become: true
 - name: Cloning .files
+  become: joshua
   ansible.builtin.git:
     repo: 'https://github.com/dzellio/.files.git'
     dest: "{{ lookup('env', 'HOME') }}/.files"
