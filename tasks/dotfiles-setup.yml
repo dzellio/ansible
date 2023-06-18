@@ -15,6 +15,7 @@
     - dotfiles
     - stow
 - name: Stow dotfiles
+  become_user: joshua
   shell: cd $HOME/.files && ./ubuntu
   tags:
     - install
