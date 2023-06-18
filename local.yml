@@ -14,11 +14,11 @@
   tasks:
     - include: tasks/git-setup.yml
     - include: tasks/core-setup.yml
+    - include: tasks/install-fonts.yml
+    - include: tasks/dotfiles-setup.yml
     - include: tasks/zsh-setup.yml
     - include: tasks/personal-projects.yml
     - include: tasks/brave-setup.yml
     - include: tasks/nvim-setup.yml
     - include: tasks/lsp-setup.yml
-    - include: tasks/dotfiles-setup.yml
-    - include: tasks/install-fonts.yml
 
