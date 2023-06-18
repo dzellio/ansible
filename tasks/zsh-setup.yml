@@ -26,11 +26,6 @@
     dest: "~/.oh-my-zsh/plugins/zsh-autosuggestions"
   tags: *tags_for_zsh_tasks
   
-- name: Delete ZSH Default Config
-  ansible.builtin.file:
-    state: absent
-    path: ~/.zshrc
-
 - name: Oh-My-Zsh
   shell: git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
   tags: *tags_for_zsh_tasks
