@@ -1,3 +1,10 @@
+- name: Installing stow
+  apt: name=stow
+  tags:
+    - install
+    - dotfiles
+    - stow
+  become: true
 - name: Cloning .files
   ansible.builtin.git:
     repo: 'https://github.com/dzellio/.files.git'
@@ -6,13 +13,6 @@
     - install
     - dotfiles
     - stow
-- name: Installing stow
-  apt: name=stow
-  tags:
-    - install
-    - dotfiles
-    - stow
-  become: true
 - name: Stow dotfiles
   shell: cd $HOME/.files && ./ubuntu
   tags:
