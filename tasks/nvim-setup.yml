@@ -40,3 +40,9 @@
   tags:
     - install
     - neovim
+    
+name: Install vim Plugins
+  shell: nvim +PlugInstall +qall +silent
+  tags:
+    - install
+    - neovim
